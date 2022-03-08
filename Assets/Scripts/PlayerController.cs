@@ -8,7 +8,9 @@ public class PlayerController : MonoBehaviour
     private float horz; //horizontal input variable
     private float vert; //vertical input variable
     private float Hspeed = 20.0f;
-    private float xRange = 22.0f; 
+    private float xRange = 22.0f;
+
+    public GameObject projectile;
 
     void Start()
     {
@@ -29,7 +31,11 @@ public class PlayerController : MonoBehaviour
             {
                 transform.position = new Vector3(-xRange, transform.position.y, transform.position.z);
             }
-        
-        
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            //Debug.Log("Space pressed");
+            Instantiate(projectile, transform.position, projectile.transform.rotation);
+        }
     }
 }
