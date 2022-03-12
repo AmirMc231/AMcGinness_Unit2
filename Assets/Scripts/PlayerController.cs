@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     private float horz; //horizontal input variable
     private float vert; //vertical input variable
     private float Hspeed = 20.0f;
-    private float xRange = 22.0f;
+    private float xRange = 16.0f;
 
     public GameObject projectile;
 
@@ -23,11 +23,11 @@ public class PlayerController : MonoBehaviour
         horz = Input.GetAxis("Horizontal");
         transform.Translate(Vector3.right * horz * Time.deltaTime * Hspeed);
 
-        if (transform.position.x > 22)
+        if (transform.position.x > 16)
         {
             transform.position = new Vector3(xRange, transform.position.y, transform.position.z);
         }
-        if(transform.position.x < -22)
+        if(transform.position.x < -16)
             {
                 transform.position = new Vector3(-xRange, transform.position.y, transform.position.z);
             }
