@@ -22,6 +22,7 @@ public class OutOfBoundsDestroy : MonoBehaviour
         else if(transform.position.z < SceneBot)
         {
             Destroy(gameObject);
+            Debug.Log("Game Over");
         }
         
     }
